@@ -12,9 +12,6 @@ struct TodosListView: View {
                     .ibmPlexSans(.semiBold, size: 15)
                     .foregroundColor(.lightGray.opacity(0.6))
                     .padding(.leading)
-                Divider()
-                    .frame(height: 5)
-                    .background(.darkGray.opacity(0.65))
                 Spacer()
             }
             Divider()

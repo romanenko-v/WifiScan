@@ -25,16 +25,18 @@ struct WifiButtonView: View {
             }
         }
     }
-    
-    private func colorFor(_ fetchingStatus: FetchStatus) -> Color {
+}
+
+private extension WifiButtonView {
+    func colorFor(_ fetchingStatus: FetchStatus) -> Color {
         fetchingStatus == .initial ? .darkWhite : .acidGreen
     }
     
-    private func circleColorFor(_ fetchingStatus: FetchStatus) -> Color {
+    func circleColorFor(_ fetchingStatus: FetchStatus) -> Color {
         fetchingStatus == .initial ? .darkGray : .acidGreen
     }
     
-    private var animatedCircles: some View {
+    var animatedCircles: some View {
         ZStack {
             ForEach(0..<scales.count, id: \.self) { index in
                 Circle()
@@ -45,13 +47,13 @@ struct WifiButtonView: View {
         }
     }
     
-    private func startAnimation() {
+    func startAnimation() {
         withAnimation(.easeIn(duration: animationDuration).repeatForever()) {
-            scales = [1.5, 1.5, 1.5, 1.5]
+            scales = [1.2, 1.2, 1.2, 1.2]
         }
     }
     
-    private func finishAnimation() {
+    func finishAnimation() {
         withAnimation(.easeInOut) {
             scales = [1.0, 1.0, 1.0, 1.0]
         }
